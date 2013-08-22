@@ -9,7 +9,7 @@ import urllib
 
 import facebook
 
-ID = 'nayan.shah'
+ID = 'CreativeIdeass'
 
 TOKEN = ''  # access token 
 SAFE_CHARS = '-_() abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
@@ -84,6 +84,7 @@ def download(res):
     print "Downloaded %s pictures in %.3f sec." % (len(res), time.clock()-start)
 
 if __name__ == '__main__':
-    lst = fetch(limit=3, depth=1)
+    # download 500 photos, fetch details about 100 at a time
+    lst = fetch(limit=100, depth=5)
     save(lst, 'photos')
     download(lst)
