@@ -10,8 +10,11 @@ def CountCombinations(n, m=1):
        ans += comb(n-i, i)
     return ans
 
+def quicksort(r):
+    return r if len(r)<2 else qs([i for i in r[1:] if i<r[0]]) + [r[0]] + qs([i for i in r[1:] if i>= r[0]])
+
 def prime(n):
-    return n>1 and not any(map(lambda x: n % x == 0, xrange(n/2+1)))
+    return n>1 and not any(map(lambda x: n % x == 0, xrange(2, n/2+1)))
     
 def fact(n):
     return reduce(op.mul, xrange(2,n+1)) if n > 1 else 1
